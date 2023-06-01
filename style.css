@@ -2,7 +2,7 @@
     /* background-color: aqua; */
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: repeating-linear-gradient(45deg,rgb(158, 239, 158),rgb(245, 245, 148) 20%);
+    background-image: repeating-linear-gradient(45deg,rgb(158, 239, 158),rgb(245, 245, 148) 2%);
 }
 .headindigTop{
     text-align: center;

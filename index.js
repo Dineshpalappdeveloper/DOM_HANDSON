@@ -74,3 +74,4 @@ function flexChange() {
     d1--;
   }
 }
+//Q8 . What’s the difference between window vs document?
