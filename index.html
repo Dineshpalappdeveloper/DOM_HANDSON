@@ -151,20 +151,21 @@ Replace1[1].addEventListener("click", () => {
         </h2>
         <pre>
    
-let c = 0;
-let Replace1 = document.getElementsByClassName("button");
-let q5 = document.getElementById("q5");
-q5.innerHTML = "Hello";
+let flex1 = document.getElementsByClassName("flex");
+let d1 = 0;
+console.log(flex1[0]);
+function flexChange() {
+  if (d1 % 2 == 0) {
+    flex1[0].setAttribute("style", "flex-direction:column");
 
-Replace1[1].addEventListener("click", () => {
-  if (c % 2 == 0) {
-    q5.innerHTML = "Welcome to Elevation academy";
-    c++;
+    console.log("yes");
+    d1++;
   } else {
-    q5.innerHTML = "Hello";
-    c--;
+    flex1[0].setAttribute("style", "flex-direction:row");
+    console.log("no");
+    d1--;
   }
-});
+}
         </pre>
         <div class="answer">
           <h3>Output:-</h3>
@@ -182,41 +183,141 @@ Replace1[1].addEventListener("click", () => {
       </div>
       <div class="question">
         <hr />
-        <h2>Q6. " What’s the difference between window vs document?</h2>
-        <!-- <pre>
-          let ele = document.getElementsByTagName("h1");
+        <h2>Q8. " What’s the difference between window vs document?</h2>
 
-          ele[2].setAttribute("style", "color:red");
-          ele[2].setAttribute("id", "heading");
-          console.log(ele[2]);
-          
-        </pre> -->
         <div class="answer">
           <h3>Output:-</h3>
           <div class="box">
-            <table>
+            <table border="1" cellpadding="1">
               <tr>
-                <th></th>
-                <th></th>
+                <th>WINDOW</th>
+
+                <th>DOCUMENT</th>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
+                <td>
+                  1.It represents the browser window in which you are seeing the
+                  content.
+                </td>
+                <td>
+                  1.It represent the document loaded inside the window or
+                  browser.
+                </td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
+                <td>
+                  2.The properties related to it are stored in the window object
+                </td>
+                <td>
+                  2.The properties related to it are stored in the document
+                  object.
+                </td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
+                <td>
+                  3.It is loaded the document because of the window container
+                  document.
+                </td>
+                <td>
+                  3.It is loaded after the loading window because the window
+                  contains a document.
+                </td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
+                <td>
+                  4.The window is the global element for all object,function
+                  etc.
+                </td>
+                <td>4.It is the root element of the document object model.</td>
+              </tr>
+              <tr>
+                <td>5.It is object of the browser.</td>
+                <td>5.It is an object of the window.</td>
+              </tr>
+              <tr>
+                <td>
+                  6.We can access document object properties inside the window.
+                </td>
+                <td>
+                  6.We can not access window objects properties inside the
+                  document.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  7.Example: window document title will return the title of the
+                  document.
+                </td>
+                <td>
+                  7.Example: document title will return the title of the
+                  document.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  8.
+                  <pre>
+logically:
+                                   window:{
+                                    document:{properties}
+                                   }
+                   </pre
+                  >
+                </td>
+                <td>
+                  8.
+                  <pre>
+  logically:
+                                 document:{properties}
+                  </pre>
+                </td>
               </tr>
             </table>
           </div>
+        </div>
+      </div>
+      <div class="question">
+        <hr />
+        <h2>
+          Q9.Write code to implement timer clock using JS -- display HH:MM:SS --
+          the time should keep updating every second .
+        </h2>
+        <pre>
+  
+let start = document.getElementById("clockStart");
+let dispay = document.getElementById("clock");
+start.addEventListener("click", () => {
+  function startClock() {
+    let time = new Date();
+    let hrs = time.getHours();
+    let mins = time.getMinutes();
+    let secs = time.getSeconds();
+    let AMPM = "AM";
+    console.log(mins);
+    if (hrs > 12) {
+      hrs -= 12;
+      AMPM = "PM";
+    }
+    dispay.innerHTML = `Hours ${hrs}: Minutes ${mins}: Seconds ${secs} :${AMPM}`;
+  }
+  setInterval(() => {
+    startClock();
+  }, 1000);
+});
+        </pre>
+        <div class="answer">
+          <button id="clockStart">Start Clock</button>
+
+          <h3>Output:-</h3>
+
+          <h3 class="box" id="clock">Not started</h3>
+        </div>
+        <hr />
+        <br />
+        <div class="button" onclick="flexChangse()">
+          <a href="./game.html">
+            <button>Let's Play Number Guesses Game</button></a
+          >
         </div>
       </div>
     </div>

@@ -65,13 +65,38 @@ let d1 = 0;
 console.log(flex1[0]);
 function flexChange() {
   if (d1 % 2 == 0) {
-    flex1[0].setAttribute("flex-direction", "column");
+    flex1[0].setAttribute("style", "flex-direction:column");
+
     console.log("yes");
     d1++;
   } else {
-    flex1[0].setAttribute("flex-direction", "row");
+    flex1[0].setAttribute("style", "flex-direction:row");
     console.log("no");
     d1--;
   }
 }
 //Q8 . What’s the difference between window vs document?
+
+//q9 Write code to implement timer clock using JS -- display HH:MM:SS -- \
+// the time should keep updating every second
+
+let start = document.getElementById("clockStart");
+let dispay = document.getElementById("clock");
+start.addEventListener("click", () => {
+  function startClock() {
+    let time = new Date();
+    let hrs = time.getHours();
+    let mins = time.getMinutes();
+    let secs = time.getSeconds();
+    let AMPM = "AM";
+    console.log(mins);
+    if (hrs > 12) {
+      hrs -= 12;
+      AMPM = "PM";
+    }
+    dispay.innerHTML = `Hours ${hrs}: Minutes ${mins}: Seconds ${secs} :${AMPM}`;
+  }
+  setInterval(() => {
+    startClock();
+  }, 1000);
+});
